@@ -1,0 +1,4 @@
+{'https://www.akc.org/dog-breeds/': {'bing': 1, 'google': 4},
+ 'https://www.imdb.com/title/tt11252248/': {'bing': 0, 'google': 1},
+ 'https://www.rottentomatoes.com/m/dog_2022': {'bing': 5, 'google': 7},
+ 'https://www.youtube.com/watch?v=V4tAtp-TyzQ': {'bing': 4, 'google': 0}}

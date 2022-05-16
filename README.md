@@ -12,16 +12,17 @@ Please make sure you have completed the soot survey at:
     [soot.binghamton.edu](https://soot.binghamton.edu)
 
 Please list the urls for the APIs you used:
-
+  https://developers.google.com/custom-search/v1/introduction
+  https://www.microsoft.com/en-us/bing/apis/bing-web-search-api
 Summary of Program:
-
+  Reused search engine API request program from final project and reprocessed the data so instead of reading from the 
 Most Challenging topic in the course:
-
+  Correctly formatting stuff in python. 
 ## KNOWN BUGS AND INCOMPLETE PARTS:
- < What parts of the project you were not able to complete >
+ I wanted to do sentiment analysis of the news results from the API and compare the scores between the different browsers but I didn't have enough time due to other stuff. Maybe over the summer or something
 
 ## REFERENCES:
- < List any outside resources used >
+https://docs.python.org/3/library/pprint.html
 
 ## MISCELLANEOUS COMMENTS:
- < Anything you would like the grader to know >
+no
