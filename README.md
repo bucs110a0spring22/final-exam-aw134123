@@ -15,7 +15,7 @@ Please list the urls for the APIs you used:
   https://developers.google.com/custom-search/v1/introduction
   https://www.microsoft.com/en-us/bing/apis/bing-web-search-api
 Summary of Program:
-  Reused search engine API request program from final project and reprocessed the data so instead of reading from the 
+  Reused search engine API request program from final project and reprocessed the data so instead of reading from the json, find ranking directly
 Most Challenging topic in the course:
   Correctly formatting stuff in python. 
 ## KNOWN BUGS AND INCOMPLETE PARTS:

@@ -53,7 +53,7 @@ def api_main():
         print(
             f'Search Results for {search_term} by URL that appears in both search engines: \n {pprint.pformat(results_common_url)}'
         )
-
+        # create new files with search result ranking and common URL for both browsers "
         result_by_rank_file_handle = open(search_term + search_engine + "ranking" + ".txt", "w")
         result_by_rank_file_handle.write(pprint.pformat(results_by_rank))
         result_common_url_file_handle = open(search_term + search_engine + "commonurl" + ".txt", "w")

@@ -27,14 +27,15 @@ class Googlescraper(Basescraper):
     def __init__(self,
                  api_key="AIzaSyAS9eKgOiroK3C1W75EUD2i0Q452NFs35k",
                  cse_engine_id="dfa6a9cd2b3cc6812"):
-        '''sets up keys to use Google API
-        second set of API keys we are on because I ran out of request for the first set '''
+        '''sets up keys to use Google API'''
         super().__init__()
         self.API_KEY = api_key
         self.SEARCH_ENGINE_ID = cse_engine_id
 
     def search(self, query):
-        '''asks Google API for the JSON data of the first page of search results in the specific format that google wants'''
+        '''asks Google API for the JSON data of the first page of search results in the specific format that google wants
+      args: query
+      return: data'''
         page = 1
         start = (page - 1) * 10 + 1
         url = f"https://www.googleapis.com/customsearch/v1?key={self.API_KEY}&cx={self.SEARCH_ENGINE_ID}&q={query}&start={start}"
@@ -42,7 +43,9 @@ class Googlescraper(Basescraper):
         return data
 
     def save_results(self, results, filename):
-        '''saves data of results into a file with the name filename'''
+        '''saves data of results into a file with the name filename
+      args: results, filename
+      return: ranked_results'''
         results_file_handle = open(filename, "w", encoding='utf-8')
         ranked_results = []
         for i, search_item in enumerate(results['items'], start=1):
@@ -63,19 +66,21 @@ class Googlescraper(Basescraper):
         return ranked_results
 
     def search_engine(self):
-        '''says that the subclass being used is google'''
+        '''says that the subclass being used is google
+      return: google'''
         return 'google'
 
 
 class Bingscraper(Basescraper):
     def __init__(self, api_key='80ed6b5369ca47f8b88508924f36cd72'):
-        '''sets up keys to use Bing API
-        '''
+        '''sets up keys to use Bing API'''
         super().__init__()
         self.API_KEY = api_key
 
     def search(self, query):
-        '''asks Bing API for the JSON data of the first page of search results in the specific format that Bing wants'''
+        '''asks Bing API for the JSON data of the first page of search results in the specific format that Bing wants
+        args: query
+        return: data'''
         search_url = "https://api.bing.microsoft.com/v7.0/search"
         headers = {"Ocp-Apim-Subscription-Key": self.API_KEY}
         params = {
@@ -91,7 +96,9 @@ class Bingscraper(Basescraper):
         return data
 
     def save_results(self, results, filename):
-        '''saves data of results into a file with the name filename. small difference with google is that the snippet is in HTML format whereas Google's is further processed'''
+        '''saves data of results into a file with the name filename. small difference with google is that the snippet is in HTML format whereas Google's is further processed
+      args: results, filename
+      return: ranked_results'''
         results_file_handle = open(filename, "w", encoding='utf-8')
         ranked_results = []
         for i, search_item in enumerate(results['webPages']['value'], start=1):
@@ -112,5 +119,6 @@ class Bingscraper(Basescraper):
         return ranked_results
 
     def search_engine(self):
-        '''says that the subclass being used is google'''
+        '''says that the subclass being used is google
+      return: bing'''
         return 'bing'
